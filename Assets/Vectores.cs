@@ -7,8 +7,8 @@ public class Vectores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
 
-         
     }
 
     // Update is called once per frame
@@ -29,13 +29,13 @@ public class Vectores : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
 
-            transform.Translate(0, 0.1f, 0);
+            transform.Translate(0, 0 , 0.1f);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
 
-           transform.Translate(0, -0.1f, 0);
+           transform.Translate(0, 0, -0.1f);
         }
 
 
