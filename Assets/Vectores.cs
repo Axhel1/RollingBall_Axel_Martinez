@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Vectores : MonoBehaviour
 {
+    [SerializeField] float speed;
+    [SerializeField] float rotationSpeed;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
