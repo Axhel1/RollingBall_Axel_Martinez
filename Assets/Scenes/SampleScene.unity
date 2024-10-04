@@ -419,8 +419,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00030633807}
-  m_LocalPosition: {x: -0.3847948, y: 0.70000005, z: 1.8072437}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12602015, y: 0.71999997, z: -1.6529279}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -687,7 +687,7 @@ Transform:
   m_GameObject: {fileID: 437456660}
   serializedVersion: 2
   m_LocalRotation: {x: -0.062212408, y: 0.91837007, z: -0.16030173, w: -0.3564118}
-  m_LocalPosition: {x: -0.3847948, y: 0.70000005, z: 1.8072437}
+  m_LocalPosition: {x: -0.12602015, y: 0.71999997, z: -1.6529279}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -790,10 +790,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0, y: 0, z: 0}
-  ShoulderOffset: {x: 0.28, y: 0.3, z: 0}
-  VerticalArmLength: 0.4
+  ShoulderOffset: {x: -0.02, y: 0.24, z: 0}
+  VerticalArmLength: 0.48
   CameraSide: 1
-  CameraDistance: 2
+  CameraDistance: 1.46
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0
@@ -851,22 +851,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00030633807
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
@@ -876,7 +876,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.965
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
@@ -926,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
       propertyPath: m_Name
-      value: MushroomMan@Happy Idle
+      value: MushRoomPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 7637179843767618416, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
         type: 3}
@@ -950,6 +950,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1552027996}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d29fd4a2c7b49d4882d9ee7eb075903,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1552027997}
   m_SourcePrefab: {fileID: 100100000, guid: 2d29fd4a2c7b49d4882d9ee7eb075903, type: 3}
 --- !u!1 &1552027993 stripped
 GameObject:
@@ -975,8 +979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b346c75a6d13c540b0688a92bde802b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  rotationSpeed: 0
+  horizontalMove: 0
+  verticalMove: 0
+  playerSpeed: 3
 --- !u!95 &1552027996
 Animator:
   serializedVersion: 5
@@ -998,6 +1003,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!143 &1552027997
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552027993}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.36
+  m_Radius: 0.55
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.62, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
