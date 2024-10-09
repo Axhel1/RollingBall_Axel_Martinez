@@ -10,8 +10,8 @@ public class Vectores : MonoBehaviour
 
 
     [SerializeField] float playerSpeed;
-    [SerializeField] float fuerzaSalto;
-    Rigidbody rb;
+   // [SerializeField] float fuerzaSalto;
+
    
 
 
@@ -20,7 +20,7 @@ public class Vectores : MonoBehaviour
     void Start()
     {
         player = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();         
+            
         
 
     }
@@ -30,13 +30,18 @@ public class Vectores : MonoBehaviour
     {
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
-        player.Move(new Vector3(horizontalMove, 0, verticalMove) * playerSpeed * Time.deltaTime);
-        if (Input.GetButtonDown("Jump")) {
+        
+      /* if (Input.GetButtonDown("Jump")) {
 
           
-        }
+        }*/
+    
 
+    }
 
+    private void FixedUpdate()
+    {
+        player.Move(new Vector3(horizontalMove, 0, verticalMove) * playerSpeed * Time.deltaTime);
     }
 
 
