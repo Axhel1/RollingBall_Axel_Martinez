@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Vectores : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Vectores : MonoBehaviour
     void Start()
     {
         player = GetComponent<CharacterController>();
+        
             
         
 
@@ -30,12 +32,12 @@ public class Vectores : MonoBehaviour
     {
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
-        
-      /* if (Input.GetButtonDown("Jump")) {
+        DetectarSuelo();
+        /* if (Input.GetButtonDown("Jump")) {
 
-          
-        }*/
-    
+
+          }*/
+
 
     }
 
@@ -44,5 +46,14 @@ public class Vectores : MonoBehaviour
         player.Move(new Vector3(horizontalMove, 0, verticalMove) * playerSpeed * Time.deltaTime);
     }
 
+
+    private void DetectarSuelo()
+    {
+        Physics.Raycast(transform.position,Vector3.down,1);
+
+       
+
+       
+    }
 
 }
