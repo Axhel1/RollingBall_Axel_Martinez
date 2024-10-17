@@ -7,6 +7,9 @@ public class Vectores : MonoBehaviour
 {
     [SerializeField] float horizontalMove;
     [SerializeField] float verticalMove;
+    [SerializeField] float TargetAngulo;
+    [SerializeField] float Angulo;
+    Vector3 moverPlayer;
     CharacterController player;
 
 
@@ -32,6 +35,19 @@ public class Vectores : MonoBehaviour
     {
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
+
+        moverPlayer = new Vector3(horizontalMove, 0, verticalMove).normalized; 
+        player.Move(moverPlayer * playerSpeed * Time.deltaTime);
+
+        TargetAngulo= Mathf.Atan2(moverPlayer.x,moverPlayer.z)*Mathf.Rad2Deg;
+        
+
+
+        
+        
+        
+        
+        
         DetectarSuelo();
         /* if (Input.GetButtonDown("Jump")) {
 
@@ -41,11 +57,7 @@ public class Vectores : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        player.Move(new Vector3(horizontalMove, 0, verticalMove) * playerSpeed * Time.deltaTime);
-    }
-
+  
 
     private void DetectarSuelo()
     {
