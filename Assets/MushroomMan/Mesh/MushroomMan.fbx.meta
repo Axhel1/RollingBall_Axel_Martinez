@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: ced146b1adbf7a3488c41d4eaacc200b
+guid: c84fbe2079f1253469d3c5ad4bbf3399
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MushroomMan_01
+    second: {fileID: 2100000, guid: d17ff50433be5cb4db738b2d7b314d07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_01
+    second: {fileID: 2100000, guid: 23d2c28dbbff3894f8346b10969877e6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -77,7 +87,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 6778689f194930f4dbb9a8bfc83d9653
+  - e57278c4588b9564c9e06f5714594efc
+  - ced146b1adbf7a3488c41d4eaacc200b
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -502,12 +515,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c84fbe2079f1253469d3c5ad4bbf3399,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
