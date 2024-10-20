@@ -53,8 +53,15 @@ public class Vectores : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && player.isGrounded) { 
         
-            velocityGravedad.y = Mathf.Sqrt(jumpVelocidad*-2*gravedad); 
-        
+            velocityGravedad.y = Mathf.Sqrt(jumpVelocidad*-2*gravedad);
+            animator.SetBool("IsJump", true);
+
+        }
+        if (!player.isGrounded) {
+
+            animator.SetBool("IsJump", false);
+
+
         }
 
 
