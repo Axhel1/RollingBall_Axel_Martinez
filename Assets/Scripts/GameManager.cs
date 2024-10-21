@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public  TMP_Text vidas;
+
+    [SerializeField]Image[] images;
     public static GameManager instance { get; private set; }
     public int Vida { get => vida; set => vida = value; }
 
@@ -24,6 +26,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         vidas.text = vida.ToString();
+        if (vida == 3) {
+
+            images[0].gameObject.SetActive(true);
+        }
     }
 
     public void PerderVida(int daño) { 
