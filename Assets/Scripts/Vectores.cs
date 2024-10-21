@@ -13,6 +13,7 @@ public class Vectores : MonoBehaviour
     [SerializeField] float angulo;
     [SerializeField] float gravedad;
     [SerializeField] float jumpVelocidad;
+    bool grounded;
     public float smoothTime = 0.1f;
     float smoothVelocity;
     Vector3 velocityGravedad;
@@ -51,22 +52,26 @@ public class Vectores : MonoBehaviour
 
         moverPlayer = (new Vector3(horizontalMove, 0, verticalMove).normalized);
 
-        if (Input.GetButtonDown("Jump") && player.isGrounded) { 
+        DetectarSuelo();
+
+        if (Input.GetButtonDown("Jump") && grounded) { 
         
             velocityGravedad.y = Mathf.Sqrt(jumpVelocidad*-2*gravedad);
             animator.SetBool("IsJump", true);
+            Debug.Log("suelo");
 
         }
-        if (!player.isGrounded) {
+        if (!grounded)
+        {
 
             animator.SetBool("IsJump", false);
-
+            Debug.Log("no suelo");
 
         }
 
 
 
-        
+
 
 
         if (moverPlayer.magnitude > 0f) {
@@ -104,7 +109,7 @@ public class Vectores : MonoBehaviour
 
 
 
-        DetectarSuelo();
+        
         
 
 
@@ -114,7 +119,17 @@ public class Vectores : MonoBehaviour
 
     private void DetectarSuelo()
     {
-        Physics.Raycast(transform.position,Vector3.down,1);
+        Debug.DrawRay(transform.position, Vector3.down *0.6f,Color.green);
+        if (Physics.Raycast(transform.position, Vector3.down, 0.6f))
+        {
+
+            grounded = true;
+
+        }
+        else { 
+
+            grounded = false;   
+        }
 
        
 
