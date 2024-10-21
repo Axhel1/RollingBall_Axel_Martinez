@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public  TMP_Text vidas;
 
     [SerializeField]Image[] images;
     public static GameManager instance { get; private set; }
@@ -25,10 +24,24 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vidas.text = vida.ToString();
         if (vida == 3) {
 
             images[0].gameObject.SetActive(true);
+            images[1].gameObject.SetActive(true);
+            images[2].gameObject.SetActive(true);
+        }
+        if (vida == 2) {
+
+            images[0].gameObject.SetActive(true);
+            images[1].gameObject.SetActive(true);
+            images[2].gameObject.SetActive(false);
+
+        }
+        if (vida == 1) {
+            images[0].gameObject.SetActive(true);
+            images[1].gameObject.SetActive(false);
+            images[2].gameObject.SetActive(false);
+
         }
     }
 
