@@ -14,6 +14,7 @@ public class Vectores : MonoBehaviour
     [SerializeField] float gravedad;
     [SerializeField] float jumpVelocidad;
     bool grounded;
+    
     public float smoothTime = 0.1f;
     float smoothVelocity;
     Vector3 velocityGravedad;
@@ -28,9 +29,12 @@ public class Vectores : MonoBehaviour
 
 
     [SerializeField] float playerSpeed;
-   // [SerializeField] float fuerzaSalto;
 
-   
+ 
+
+    // [SerializeField] float fuerzaSalto;
+
+
 
 
     void Start()

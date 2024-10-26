@@ -7,15 +7,19 @@ public class ColisionPersonaje : MonoBehaviour
 {
     [SerializeField]private Transform respawns;
     [SerializeField]private CheckPoint CheckPoint;
+    
+
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("SueloMuerte")) {
 
-
+            
             GetComponent<CharacterController>().enabled=false;
             this.gameObject.transform.position = respawns.transform.position;
             GetComponent<CharacterController>().enabled = true;
+            GameManager.instance.Vida = 3;
 
         }
 
@@ -31,7 +35,16 @@ public class ColisionPersonaje : MonoBehaviour
                 GameManager.instance.Vida=3; 
 
             }
-                        
+
+           
+
+
+        }
+
+        if (other.gameObject.CompareTag("Daño"))
+        {
+            StartCoroutine(enumerator());
+
 
         }
 
@@ -68,6 +81,13 @@ public class ColisionPersonaje : MonoBehaviour
 
             }
         }
+    }
+
+    IEnumerator enumerator() {
+
+        GameManager.instance.Damage = true;
+        yield return new WaitForSeconds(0.4f);
+        GameManager.instance.Damage = false;
     }
 
 

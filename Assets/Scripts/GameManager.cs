@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +9,18 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField]Image[] images;
+    public Animator anim;
+
+    private bool damage=false;
+    private int vida = 3;
     public static GameManager instance { get; private set; }
+
+    
+    public bool Damage { get => damage; set => damage = value; }
+
     public int Vida { get => vida; set => vida = value; }
 
-    private int vida = 3;
-    bool isVivo=true;
+    bool isVivo;
 
 
 
@@ -42,6 +50,17 @@ public class GameManager : MonoBehaviour
             images[1].gameObject.SetActive(false);
             images[2].gameObject.SetActive(false);
 
+        }
+
+        if (damage == true)
+        {
+
+            anim.SetBool("IsDamage", true);
+
+        }
+        else 
+        {
+            anim.SetBool("IsDamage", false);
         }
     }
 

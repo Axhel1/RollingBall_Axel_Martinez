@@ -21,16 +21,23 @@ public class PlataformasMove : MonoBehaviour
     {
         
         timer += 1 * Time.deltaTime;
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
-        if (timer >= 5) {
 
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-
+        if (timer >= 0 && timer <= 5)
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
 
         }
-        
+        else if (timer >= 5 && timer <= 10)
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+
+        }
+        else if (timer >= 10) {
+            timer = 0;
+        }
 
 
-        
+
+         
     }
 }
