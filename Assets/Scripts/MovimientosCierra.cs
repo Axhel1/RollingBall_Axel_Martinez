@@ -2,44 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlataformasMove : MonoBehaviour
-
-   
+public class MovimientosCierra : MonoBehaviour
 {
 
-    [SerializeField]float speed;    
-    [SerializeField]float timer=0;
-    [SerializeField]Vector3 dir1;
-    [SerializeField]Vector3 dir2;
+    [SerializeField] float speed;
+    [SerializeField] float timer = 0;
+    [SerializeField] Vector3 dir1;
+    [SerializeField] Vector3 dir2;
+    // Start is called before the first frame update
 
-
-    void Start()
-    {
-       
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
         timer += 1 * Time.deltaTime;
 
-        if (timer >= 0 && timer <= 5)
+        if (timer >= 0 && timer <= 1.5)
         {
             transform.Translate(dir1 * speed * Time.deltaTime);
 
         }
-        else if (timer >= 5 && timer <= 10)
+        else if (timer >= 1.5 && timer <= 3)
         {
             transform.Translate(dir2 * speed * Time.deltaTime);
 
         }
-        else if (timer >= 10) {
+        else if (timer >= 3)
+        {
             timer = 0;
         }
-
-
-
-         
     }
 }
