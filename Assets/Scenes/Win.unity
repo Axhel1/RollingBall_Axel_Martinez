@@ -246,10 +246,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1807663526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.083, y: 0}
-  m_SizeDelta: {x: 332.0345, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -95.96277, y: 0}
+  m_SizeDelta: {x: -3507.9656, y: -2110}
   m_Pivot: {x: 0.5273557, y: 0.5}
 --- !u!114 &1507795996
 MonoBehaviour:
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VICOTRIA
+  m_text: VICTORIA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e8a4cb9f69b0aa45acfdfe074b510c1, type: 2}
   m_sharedMaterial: {fileID: -3569655666475137328, guid: 8e8a4cb9f69b0aa45acfdfe074b510c1,

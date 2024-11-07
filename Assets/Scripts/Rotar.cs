@@ -17,6 +17,6 @@ public class Rotar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(dir,vel*Time.deltaTime);
+        transform.Rotate(dir,vel*Time.deltaTime,Space.Self);
     }
 }
